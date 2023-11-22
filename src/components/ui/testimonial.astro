@@ -5,6 +5,7 @@ const { description, image, fullname, siteUrl } = Astro.props;
 
 <figure
   class="relative flex flex-col justify-between rounded-lg bg-[#121217] p-8 text-sm leading-6 space-y-8 transform transition-transform duration-300 hover:-translate-y-2"
+  aria-labelledby="testimonial-heading"
 >
   <div
     class="opacity-70 h-full transform transition-transform duration-300 hover:rotate-3"
@@ -48,15 +49,13 @@ const { description, image, fullname, siteUrl } = Astro.props;
       </defs>
     </svg>
   </div>
-  <blockquote class="text-primary">
-    <p>
-      “{description}”
-    </p>
+  <blockquote class="text-primary-foreground" id="testimonial-heading">
+    “{description}”
   </blockquote>
-  <figcaption class="mt-6 flex items-center gap-x-4">
+  <figcaption class="flex items-center gap-x-4">
     <img class="h-10 w-10 rounded-full md:block hidden" src={image} alt="" />
     <div class="whitespace-nowrap">
-      <div class="font-semibold text-primary">{fullname}</div>
+      <div class="font-semibold text-primary-foreground">{fullname}</div>
       <a
         href={siteUrl}
         target="_blank"
