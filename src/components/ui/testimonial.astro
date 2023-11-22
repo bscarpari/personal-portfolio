@@ -1,0 +1,70 @@
+---
+import { Link } from "lucide-react";
+const { description, image, fullname, siteUrl } = Astro.props;
+---
+
+<figure
+  class="relative flex flex-col justify-between rounded-lg bg-[#121217] p-8 text-sm leading-6 space-y-8 transform transition-transform duration-300 hover:-translate-y-2"
+>
+  <div
+    class="opacity-70 h-full transform transition-transform duration-300 hover:rotate-3"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="45"
+      height="31"
+      viewBox="0 0 45 31"
+      fill="none"
+    >
+      <path
+        d="M27.4737 19.2889C27.4737 16.763 28.0461 14.4475 29.1908 12.3426C30.2961 10.2759 31.6382 8.47716 33.2171 6.94629C34.7961 5.37716 36.5329 3.96111 38.4276 2.69815C40.3224 1.47346 41.8421 0.574074 42.9868 0L45 3.38704C43.3816 4.30556 41.8421 5.24321 40.3816 6.2C38.8816 7.19506 37.7368 8.13272 36.9474 9.01296C35.8816 10.1611 35.0329 11.3475 34.4013 12.5722C33.7697 13.8352 33.375 15.4809 33.2171 17.5093H36.0592C38.5461 17.5093 40.4803 18.1216 41.8618 19.3463C43.2434 20.571 43.9342 22.2741 43.9342 24.4556C43.9342 26.0247 43.3026 27.4981 42.0395 28.8759C40.7763 30.292 39.0592 31 36.8882 31C33.5329 31 31.125 29.9093 29.6645 27.7278C28.2039 25.5846 27.4737 22.7716 27.4737 19.2889Z"
+        fill="url(#paint0_linear_303_1024)"></path>
+      <path
+        d="M0 19.2889C0 16.763 0.572369 14.4475 1.71711 12.3426C2.82237 10.2759 4.16447 8.47716 5.74342 6.94629C7.32237 5.37716 9.05921 3.96111 10.9539 2.69815C12.8487 1.47346 14.3684 0.574074 15.5132 0L17.5263 3.38704C15.9079 4.30556 14.3684 5.24321 12.9079 6.2C11.4079 7.19506 10.2632 8.13272 9.47369 9.01296C8.4079 10.1611 7.55921 11.3475 6.92763 12.5722C6.29605 13.8352 5.90132 15.4809 5.74342 17.5093H8.58553C11.0724 17.5093 13.0066 18.1216 14.3882 19.3463C15.7697 20.571 16.4605 22.2741 16.4605 24.4556C16.4605 26.0247 15.8289 27.4981 14.5658 28.8759C13.3026 30.292 11.5855 31 9.41447 31C6.05921 31 3.65132 29.9093 2.19079 27.7278C0.730267 25.5846 0 22.7716 0 19.2889Z"
+        fill="url(#paint1_linear_303_1024)"></path>
+      <defs>
+        <linearGradient
+          id="paint0_linear_303_1024"
+          x1="45"
+          y1="15.5"
+          x2="-1.67638e-07"
+          y2="15.5"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#C082FF"></stop>
+          <stop offset="1" stop-color="#7E67FF"></stop>
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_303_1024"
+          x1="45"
+          y1="15.5"
+          x2="-1.67638e-07"
+          y2="15.5"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#C082FF"></stop>
+          <stop offset="1" stop-color="#7E67FF"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <blockquote class="text-primary">
+    <p>
+      “{description}”
+    </p>
+  </blockquote>
+  <figcaption class="mt-6 flex items-center gap-x-4">
+    <img class="h-10 w-10 rounded-full md:block hidden" src={image} alt="" />
+    <div class="whitespace-nowrap">
+      <div class="font-semibold text-primary">{fullname}</div>
+      <a
+        href={siteUrl}
+        target="_blank"
+        class="hover:underline transition-all hover:opacity-90"
+      >
+        <Link className="inline-block w-4 h-4 mr-1" />
+        {siteUrl}
+      </a>
+    </div>
+  </figcaption>
+</figure>
