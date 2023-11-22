@@ -3,12 +3,11 @@ import { Link } from "lucide-react";
 const { description, image, fullname, siteUrl } = Astro.props;
 ---
 
-<figure
-  class="relative flex flex-col justify-between rounded-lg bg-[#121217] p-8 text-sm leading-6 space-y-8 transform transition-transform duration-300 hover:-translate-y-2"
-  aria-labelledby="testimonial-heading"
+<div
+  class="relative flex flex-col items-start justify-between rounded-lg bg-[#121217] p-8 text-sm leading-6 space-y-8 transform transition-transform duration-300 hover:-translate-y-2"
 >
   <div
-    class="opacity-70 h-full transform transition-transform duration-300 hover:rotate-3"
+    class="opacity-70 transform transition-transform duration-300 hover:rotate-3"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,10 +48,10 @@ const { description, image, fullname, siteUrl } = Astro.props;
       </defs>
     </svg>
   </div>
-  <blockquote class="text-primary-foreground" id="testimonial-heading">
+  <div class="text-primary-foreground">
     “{description}”
-  </blockquote>
-  <figcaption class="flex items-center gap-x-4">
+  </div>
+  <div class="flex items-center gap-x-4">
     <img class="h-10 w-10 rounded-full md:block hidden" src={image} alt="" />
     <div class="whitespace-nowrap">
       <div class="font-semibold text-primary-foreground">{fullname}</div>
@@ -65,5 +64,5 @@ const { description, image, fullname, siteUrl } = Astro.props;
         {siteUrl}
       </a>
     </div>
-  </figcaption>
-</figure>
+  </div>
+</div>
