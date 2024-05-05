@@ -1,9 +1,10 @@
 ---
 import { Smartphone } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 ---
 
 <div
+  id="cta"
   class="relative isolate overflow-hidden bg-[#121217] my-48 rounded-lg sm:mx-8 mx-6"
 >
   <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -12,7 +13,7 @@ import { Button } from "../ui/button";
         Tem alguma dúvida?
       </h2>
       <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-        <span class="font-semibold">Me chame no Whatsapp,</span> irei te ajudar com
+        <span class="font-semibold sm:text-justify">Me chame no Whatsapp,</span> irei te ajudar com
         qualquer dúvida e já lançamos seu website no ar <span
           class="transform transition-transform scale-50 hover:scale-105"
         >
@@ -21,7 +22,7 @@ import { Button } from "../ui/button";
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a
-          href="https://api.whatsapp.com/send?phone=5551990104523&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20servi%C3%A7o%20de%20cria%C3%A7%C3%A3o%20de%20sites%20e%20lojas%20virtuais%20%F0%9F%98%8A"
+          href={`https://api.whatsapp.com/send?phone=${import.meta.env.WHATSAPP_NUMBER}&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20servi%C3%A7o%20de%20cria%C3%A7%C3%A3o%20de%20sites%20e%20lojas%20virtuais%20%F0%9F%98%8A`}
           target="_blank"
           rel="noopener noreferrer"
         >

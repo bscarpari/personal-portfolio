@@ -1,13 +1,32 @@
 ---
 /* Layout */
-import Navbar from "@/components/ui/navbar";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/layouts/Container.astro";
 import Footer from "@/layouts/Footer.astro";
 
-/* Components */
+/* Sections */
+import Hero from "@/components/pages/services/Hero.astro";
+import ServicesComponent from "@/components/pages/services/ServicesComponent.astro";
+import About from "@/components/pages/services/About.astro";
+import Testimonials from "@/components/pages/services/Testimonials.astro";
+import Pricings from "@/components/pages/services/Pricings.astro";
+import CTA from "@/components/pages/services/CTA.astro";
 ---
- 
+
+<Layout>
+  <div class="section">
+    <Hero />
+    <Container>
+      <ServicesComponent />
+      <About />
+      <Testimonials />
+      <Pricings />
+      <CTA />
+      <Footer />
+    </Container>
+  </div>
+</Layout>
+
 <style>
   .section {
     opacity: 0;
@@ -23,19 +42,6 @@ import Footer from "@/layouts/Footer.astro";
     }
   }
 </style>
-
-<Layout>
-  <div class="section">
-    <Container>
-      <Navbar client:load />
-      <div class="h-screen">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.2.5/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/ShAbGrvlZcUT1DrH/scene.splinecode" class=""></spline-viewer>
-      </div>
-      <Footer />
-    </Container>
-  </div>
-</Layout>
 
 <script>
   import ScrollReveal from "scrollreveal";

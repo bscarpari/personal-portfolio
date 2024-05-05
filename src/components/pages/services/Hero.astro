@@ -1,9 +1,9 @@
 ---
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Figma } from "lucide-react";
 ---
 
-<div class="relative isolate overflow-hidden">
+<div class="relative isolate overflow-hidden" id="hero">
   <svg
     class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] opacity-20"
     aria-hidden="true"
@@ -69,8 +69,7 @@ import { Figma } from "lucide-react";
       </p>
       <div class="mt-10 flex items-center gap-x-6">
         <a
-          href="https://wa.me/5551990104523?text=Olá, gostaria de um website para meu negócio!"
-          target="_blank"
+          href="#pricing-plans"
           class="w-full sm:w-auto"
         >
           <Button variant={"gradient"} size={"lg"} className="w-full">

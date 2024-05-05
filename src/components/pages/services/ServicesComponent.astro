@@ -1,12 +1,12 @@
 ---
-import Header from "../ui/header.astro";
-import Card from "../ui/card.astro";
+import Header from "@/components/ui/header.astro";
+import Card from "@/components/ui/card.astro";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Figma } from "lucide-react";
 ---
 
-<div class="mx-auto max-w-7xl px-6 text-center lg:px-8 my-48">
+<div class="mx-auto max-w-7xl px-6 text-center lg:px-8 my-48" id="services">
   <Header
     subtitle="Serviços"
     title="Desenvolvimento web & design é minha especialidade"
@@ -29,8 +29,7 @@ import { Figma } from "lucide-react";
     />
   </ul>
   <a
-    href="https://wa.me/5551990104523?text=Olá, gostaria de um website para meu negócio!"
-    target="_blank"
+    href="#pricing-plans"
     class="w-full sm:w-auto"
   >
     <Button variant={"gradient"} size={"lg"} className="w-full sm:w-auto">
