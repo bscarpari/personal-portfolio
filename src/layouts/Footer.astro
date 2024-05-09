@@ -1,5 +1,5 @@
 ---
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin, Home } from "lucide-react";
 
 const date = new Date();
 ---
@@ -9,6 +9,13 @@ const date = new Date();
     class="flex items-center md:justify-between md:flex-row flex-col border-t border-neutral-800 py-12"
   >
     <div class="flex justify-center items-center space-x-6 md:order-2">
+      <a 
+        href="/"
+        class="rounded-md border border-neutral-800 p-2 bg-primary hover:bg-primary/70 h-12 w-12 flex items-center justify-center"
+      >
+        <span class="sr-only">Homepage</span>
+        <Home className="h-6 w-6" />
+      </a>
       <a
         href="https://www.instagram.com/_scarpari/"
         target="_blank"

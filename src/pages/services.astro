@@ -14,17 +14,15 @@ import CTA from "@/components/pages/services/CTA.astro";
 ---
 
 <Layout>
-  <div class="section">
-    <Hero />
-    <Container>
-      <ServicesComponent />
-      <About />
-      <Testimonials />
-      <Pricings />
-      <CTA />
-      <Footer />
-    </Container>
-  </div>
+  <Hero />
+  <Container>
+    <ServicesComponent />
+    <About />
+    <Testimonials />
+    <Pricings />
+    <CTA />
+    <Footer />
+  </Container>
 </Layout>
 
 <style>
@@ -53,18 +51,25 @@ import CTA from "@/components/pages/services/CTA.astro";
     distance: "50px",
     duration: 2000,
     delay: 300,
-    reset: false
+    reset: false,
   });
 
-  const sections = ["#services", "#about", "#testimonials", "#pricings", "#cta", "#footer"];
+  const sections = [
+    "#services",
+    "#about",
+    "#testimonials",
+    "#pricings",
+    "#cta",
+    "#footer",
+  ];
 
-  sections.forEach(section => {
+  sections.forEach((section) => {
     sr.reveal(section, {
       origin: "top",
       distance: "50px",
       duration: 2000,
       delay: 300,
-      reset: false
+      reset: false,
     });
   });
 </script>

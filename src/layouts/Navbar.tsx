@@ -13,86 +13,58 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/utils";
 
-const components: { title: string; href: string; description: string }[] = [
+const setup: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Equipamentos",
+    href: "/setup/equipments",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Stack",
+    href: "/setup/stack",
     description:
       "For sighted users to preview content available behind a link.",
   },
+];
+
+const about: { title: string; href: string; description: string }[] = [
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Sobre mim",
+    href: "/about/me",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Projetos",
+    href: "about/projects",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "For sighted users to preview content available behind a link.",
   },
 ];
+
 
 export function Navbar() {
   return (
     <div className="flex justify-between items-center w-full h-32">
       {/* Brand Section */}
-      <a href="/" className="flex items-center space-x-2">
+      <div className="flex items-center justify-center space-x-2">
         <img
           src="/public/assets/logo.svg"
-          alt="shadcn/ui"
+          alt="Bruno Scarpari's logo"
           className="h-12 hover:opacity-80 transition-opacity duration-200 ease-in-out hover:trasform hover:scale-105"
         />
-      </a>
+      </div>
 
-      <NavigationMenu className="border">
+      <NavigationMenu className="border flex-1 justify-center">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Setup</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="flex flex-col gap-1 w-full min-w-[300px]">
-                <ListItem href="/docs" title="Introduction">
-                  Livros
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  Cursos
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  Cursos
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="flex flex-col gap-1 w-full min-w-[300px]">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
+                {setup.map((s) => (
+                  <ListItem key={s.title} title={s.title} href={s.href}>
+                    {s.description}
                   </ListItem>
                 ))}
               </ul>
@@ -100,7 +72,24 @@ export function Navbar() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/docs">
+            <NavigationMenuTrigger>Sobre</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="flex flex-col gap-1 w-full min-w-[300px]">
+                {about.map((a) => (
+                  <ListItem
+                    key={a.title}
+                    title={a.title}
+                    href={a.href}
+                  >
+                    {a.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <a href="/services">
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Serviços
               </NavigationMenuLink>
@@ -108,12 +97,8 @@ export function Navbar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-    
-      <Button
-        as="a"
-        href="/solicitar-proposta"
-        size="lg"
-      >
+
+      <Button as="a" href="/solicitar-proposta" size="lg">
         Solicitar proposta
       </Button>
     </div>
