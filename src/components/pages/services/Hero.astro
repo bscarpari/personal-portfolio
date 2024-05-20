@@ -1,6 +1,10 @@
 ---
 import { Button } from "@/components/ui/button";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { Figma } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="relative isolate overflow-hidden" id="hero">
@@ -55,26 +59,24 @@ import { Figma } from "lucide-react";
         class="sm:h-24 h-16 sm:w-auto w-full"
       />
       <h1
-        class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl"
+        class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-5xl"
       >
-        Potencialize seu negócio com um <span
+        {t("services.hero.title.primary")}<span
           class="bg-gradient text-transparent bg-clip-text opacity-90"
         >
-          website de alta conversão</span
+          {t("services.hero.title.secondary")}</span
         >
       </h1>
       <p class="mt-6 text-lg leading-8">
-        <span class="font-semibold">Venda muito mais</span> com um website sob medida,
-        rápido e que atrai novos clientes todos os dias!
+        <span class="font-semibold"
+          >{t("services.hero.subtitle.highlight")}</span
+        >{t("services.hero.subtitle")}
       </p>
       <div class="mt-10 flex items-center gap-x-6">
-        <a
-          href="#pricing-plans"
-          class="w-full sm:w-auto"
-        >
+        <a href="#pricing-plans" class="w-full sm:w-auto">
           <Button variant={"gradient"} size={"lg"} className="w-full">
             <Figma className="w-6 h-6 mr-2" />
-            Quero um website
+            {t("services.cta")}
           </Button>
         </a>
       </div>

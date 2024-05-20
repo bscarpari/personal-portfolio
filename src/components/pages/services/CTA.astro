@@ -1,6 +1,10 @@
 ---
 import { Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div
@@ -9,26 +13,27 @@ import { Button } from "@/components/ui/button";
 >
   <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-4xl">
-        Tem alguma dúvida?
-      </h2>
+      <h2
+        class="text-4xl font-bold tracking-tight text-white sm:text-4xl"
+        set:html={t("services.cta.title")}
+      />
       <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-        <span class="font-semibold sm:text-justify">Me chame no Whatsapp,</span> irei te ajudar com
-        qualquer dúvida e já lançamos seu website no ar <span
-          class="transform transition-transform scale-50 hover:scale-105"
-        >
-          💜
-        </span>
+        <span
+          class="font-semibold sm:text-justify"
+          set:html={t("services.cta.subtitle")}
+        />
       </p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a
-          href={`https://api.whatsapp.com/send?phone=${import.meta.env.WHATSAPP_NUMBER}&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20seu%20servi%C3%A7o%20de%20cria%C3%A7%C3%A3o%20de%20sites%20e%20lojas%20virtuais%20%F0%9F%98%8A`}
+          href={`https://api.whatsapp.com/send?phone=${
+            import.meta.env.WHATSAPP_NUMBER
+          }&text=${encodeURIComponent(t("services.cta.whatsappMessage"))}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Button variant={"gradient"} size={"lg"}>
             <Smartphone className="w-6 h-6 mr-2" />
-            Conversar no Whatsapp
+            {t("services.cta.button")}
           </Button>
         </a>
       </div>

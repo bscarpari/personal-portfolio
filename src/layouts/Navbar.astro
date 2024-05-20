@@ -1,0 +1,66 @@
+---
+import { Button } from "@/components/ui/button";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url) as "en" | "br";
+const t = useTranslations(lang);
+---
+
+<main id="navbar">
+  <nav class="my-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between w-full">
+          <!-- Brand -->
+          <a href="/" class="w-[120px] h-12">
+            <div
+              class="flex-shrink-0 hover:opacity-80 scale-100 hover:scale-105"
+            >
+              <img
+                class="h-12 w-12"
+                src="/assets/logo.svg"
+                alt="Bruno Scarpari's logo"
+              />
+            </div>
+          </a>
+
+          <!-- Links (DESKTOP) -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a
+                href={`/${lang}/`}
+                class={`text-gray-300 hover:bg-neutral-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+              >
+                {t(`nav.home`)}
+              </a>
+              <a
+                target="_blank"
+                href={`https://bscarpari.github.io/posts/`}
+                class={`text-gray-300 hover:bg-neutral-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+              >
+                Blog
+              </a>
+              <a
+                href={`/${lang}/services`}
+                class={`text-gray-300 hover:bg-neutral-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}
+              >
+                {t(`nav.services`)}
+              </a>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <a
+            href="https://wa.me/5551990104523"
+            target="_blank"
+            class="ml-10 flex items-baseline space-x-4"
+          >
+            <Button variant={"outline"}>
+              {t("nav.cta")}
+            </Button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</main>

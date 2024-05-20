@@ -23,15 +23,9 @@ dependencies:
   '@fontsource-variable/space-grotesk':
     specifier: ^5.0.15
     version: 5.0.15
-  '@hookform/resolvers':
-    specifier: ^3.3.4
-    version: 3.3.4(react-hook-form@7.51.4)
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.17)(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)
-  '@radix-ui/react-icons':
-    specifier: ^1.3.0
-    version: 1.3.0(react@18.2.0)
   '@radix-ui/react-label':
     specifier: ^2.0.2
     version: 2.0.2(@types/react-dom@18.2.17)(@types/react@18.2.38)(react-dom@18.2.0)(react@18.2.0)
@@ -47,15 +41,6 @@ dependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
-  '@types/react':
-    specifier: ^18.0.21
-    version: 18.2.38
-  '@types/react-dom':
-    specifier: ^18.0.6
-    version: 18.2.17
-  '@types/scrollreveal':
-    specifier: ^0.0.11
-    version: 0.0.11
   astro:
     specifier: ^3.5.5
     version: 3.6.0(typescript@5.4.5)
@@ -101,11 +86,17 @@ dependencies:
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
-  zod:
-    specifier: ^3.23.6
-    version: 3.23.6
 
 devDependencies:
+  '@types/react':
+    specifier: ^18.2.38
+    version: 18.2.38
+  '@types/react-dom':
+    specifier: ^18.2.17
+    version: 18.2.17
+  '@types/scrollreveal':
+    specifier: ^0.0.11
+    version: 0.0.11
   '@typescript-eslint/parser':
     specifier: 5.59.7
     version: 5.59.7(eslint@8.41.0)(typescript@5.4.5)
@@ -1052,14 +1043,6 @@ packages:
     resolution: {integrity: sha512-APV/HjMrlJIDbIpfMGVgG3Y6TB9HLZQzYdY3/5EieT0E5+89XuuY0VJJW2RUlg8G6NKNExdlL5QLklfexveHcA==}
     dev: false
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.51.4):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
-    peerDependencies:
-      react-hook-form: ^7.0.0
-    dependencies:
-      react-hook-form: 7.51.4(react@18.2.0)
-    dev: false
-
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
     engines: {node: '>=10.10.0'}
@@ -1336,14 +1319,6 @@ packages:
       '@types/react-dom': 18.2.17
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@radix-ui/react-icons@1.3.0(react@18.2.0):
-    resolution: {integrity: sha512-jQxj/0LKgp+j9BiTXz3O3sgs26RNet2iLWmsPyRz2SIcR4q/4SbazXfnYwbAr+vLYKSfc7qxzyGQA1HLlYiuNw==}
-    peerDependencies:
-      react: ^16.x || ^17.x || ^18.x
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@radix-ui/react-id@1.0.1(@types/react@18.2.38)(react@18.2.0):
@@ -1928,13 +1903,11 @@ packages:
 
   /@types/prop-types@15.7.11:
     resolution: {integrity: sha512-ga8y9v9uyeiLdpKddhxYQkxNDrfvuPrlFb0N1qnZZByvcElJaXthF1UhvCh9TLWJBEHeNtdnbysW7Y6Uq8CVng==}
-    dev: false
 
   /@types/react-dom@18.2.17:
     resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
       '@types/react': 18.2.38
-    dev: false
 
   /@types/react@18.2.38:
     resolution: {integrity: sha512-cBBXHzuPtQK6wNthuVMV6IjHAFkdl/FOPFIlkd81/Cd1+IqkHu/A+w4g43kaQQoYHik/ruaQBDL72HyCy1vuMw==}
@@ -1942,7 +1915,6 @@ packages:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
       csstype: 3.1.2
-    dev: false
 
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
@@ -1952,11 +1924,10 @@ packages:
 
   /@types/scheduler@0.16.8:
     resolution: {integrity: sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==}
-    dev: false
 
   /@types/scrollreveal@0.0.11:
     resolution: {integrity: sha512-GDOESLkVNyd5FIS980N9rDtp45L7jfyvbDuumtaMXMPfJOFOk/7ADNvXaL/NBggXJHQJSgNNHsJBrQ2mTE7+cA==}
-    dev: false
+    dev: true
 
   /@types/unist@2.0.10:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
@@ -2760,7 +2731,6 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: false
 
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

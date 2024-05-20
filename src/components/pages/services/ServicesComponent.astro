@@ -4,37 +4,38 @@ import Card from "@/components/ui/card.astro";
 
 import { Button } from "@/components/ui/button";
 import { Figma } from "lucide-react";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="mx-auto max-w-7xl px-6 text-center lg:px-8 my-48" id="services">
   <Header
-    subtitle="Serviços"
-    title="Desenvolvimento web & design é minha especialidade"
+    subtitle={`${t("services.section.subtitle")}`}
+    title={`${t("services.section.title")}`}
   />
   <ul
     role="list"
     class="mx-auto my-16 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
   >
     <Card
-      title="Web Design"
-      description="Websites e landing page para qualquer nicho, com ênfase em conversão e apreço visual."
+      title={`${t("services.section.first.card.title")}`}
+      description={`${t("services.section.first.card.description")}`}
     />
     <Card
-      title="Design Gráfico"
-      description="Produzo desde identidades visuais a  artes para redes sociais, tornando sua presença digital consistente."
+      title={`${t("services.section.second.card.title")}`}
+      description={`${t("services.section.second.card.description")}`}
     />
     <Card
-      title="Desenvolvimento web"
-      description="Todos os projetos são desenvolvidos do zero com tecnologias atualizadas e de alta performance."
+      title={`${t("services.section.third.card.title")}`}
+      description={`${t("services.section.third.card.description")}`}
     />
   </ul>
-  <a
-    href="#pricing-plans"
-    class="w-full sm:w-auto"
-  >
+  <a href="#pricing-plans" class="w-full sm:w-auto">
     <Button variant={"gradient"} size={"lg"} className="w-full sm:w-auto">
       <Figma className="w-6 h-6 mr-2" />
-      Quero um website
+      {t("services.cta")}
     </Button>
   </a>
 </div>

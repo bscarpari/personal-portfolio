@@ -1,0 +1,75 @@
+---
+/* Layout */
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/layouts/Container.astro";
+import Footer from "@/layouts/Footer.astro";
+
+/* Sections */
+import Hero from "@/components/pages/services/Hero.astro";
+import ServicesComponent from "@/components/pages/services/ServicesComponent.astro";
+import About from "@/components/pages/services/About.astro";
+import Testimonials from "@/components/pages/services/Testimonials.astro";
+import Pricings from "@/components/pages/services/Pricings.astro";
+import CTA from "@/components/pages/services/CTA.astro";
+---
+
+<Layout>
+  <Hero />
+  <Container>
+    <ServicesComponent />
+    <About />
+    <Testimonials />
+    <Pricings />
+    <CTA />
+    <Footer />
+  </Container>
+</Layout>
+
+<style>
+  .section {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  import ScrollReveal from "scrollreveal";
+
+  const sr = ScrollReveal();
+
+  sr.reveal(".section", {
+    origin: "top",
+    distance: "50px",
+    duration: 2000,
+    delay: 300,
+    reset: false,
+  });
+
+  const sections = [
+    "#services",
+    "#about",
+    "#testimonials",
+    "#pricings",
+    "#cta",
+    "#footer",
+  ];
+
+  sections.forEach((section) => {
+    sr.reveal(section, {
+      origin: "top",
+      distance: "50px",
+      duration: 2000,
+      delay: 300,
+      reset: false,
+    });
+  });
+</script>

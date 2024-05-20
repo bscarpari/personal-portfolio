@@ -1,6 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Spacing from "@/layouts/Spacing.astro";
 import { Asterisk } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Spacing>
@@ -18,42 +22,44 @@ import { Asterisk } from "lucide-react";
         />
         <div class="w-full flex-auto">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Um pouco sobre mim...
+            {t("services.about.title")}
           </h2>
           <p class="mt-6 text-sm leading-6 text-justify">
-            Meu nome é Bruno Scarpari, sou de Gravataí - RS. Minha jornada na
-            área começou em 2019 quando iniciei meu curso técnico em Informática
-            para Internet. Neste curso, tive a oportunidade aprofundar meus
-            conhecimentos em desenvolvimento web.
+            {t("services.about.description")}
           </p>
           <p class="mt-6 text-sm leading-6 text-justify">
-            No entanto, sempre tive um grande interesse em Design e, por isso,
-            dediquei parte do meu tempo livre para desenvolver habilidades em
-            prototipação, wireframes, identidade visual, logos e design de
-            interfaces.
+            {t("services.about.complement")}
           </p>
           <div class="mt-6">
             <h2
               class="text-primary-foreground leading-8 font-semibold text-lg mb-2"
             >
-              Competências
+              {t("services.about.competences")}
             </h2>
             <ul role="list" class="flex flex-col space-y-2">
               <li class="flex gap-x-3">
                 <Asterisk className="h-6 w-6" />
-                <span>4 anos de experiência em desenvolvimento web</span>
+                <span>
+                  {t("services.about.first.competence")}
+                </span>
               </li>
               <li class="flex gap-x-3">
                 <Asterisk className="h-6 w-6" />
-                <span>4 anos desenvolvendo artes digitais como freelancer</span>
+                <span>
+                  {t("services.about.second.competence")}
+                </span>
               </li>
               <li class="flex gap-x-3">
                 <Asterisk className="h-6 w-6" />
-                <span>1 ano atuando como Product Designer na ayos.dev</span>
+                <span>
+                  {t("services.about.third.competence")}
+                </span>
               </li>
               <li class="flex gap-x-3">
                 <Asterisk className="h-6 w-6" />
-                <span>+20 projetos desenvolvidos</span>
+                <span>
+                  {t("services.about.fourth.competence")}
+                </span>
               </li>
             </ul>
           </div>

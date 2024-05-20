@@ -1,21 +1,23 @@
 ---
-import { Github, Instagram, Linkedin, Home } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url) as "en" | "br";
+const t = useTranslations(lang);
 
 const date = new Date();
 ---
 
 <footer class="sm:px-8 px-6" id="footer">
   <div
-    class="flex items-center md:justify-between md:flex-row flex-col border-t border-neutral-800 py-12"
+    class="flex items-center py-8 md:justify-between md:flex-row flex-col border-t border-neutral-800"
   >
     <div class="flex justify-center items-center space-x-6 md:order-2">
-      <a 
-        href="/"
-        class="rounded-md border border-neutral-800 p-2 bg-primary hover:bg-primary/70 h-12 w-12 flex items-center justify-center"
-      >
-        <span class="sr-only">Homepage</span>
-        <Home className="h-6 w-6" />
-      </a>
+      <!-- Language Picker -->
+      <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="rounded-md border border-neutral-800 p-2 bg-primary hover:bg-primary/70 w-auto h-12 flex flex-row items-center justify-center space-x-2">
+        <option value={`/${lang}/`} selected>{lang === 'en' ? '🇺🇸' : '🇧🇷'}</option>
+        <option value={`/${lang === 'en' ? 'br' : 'en'}/`}>{lang === 'en' ? '🇧🇷' : '🇺🇸'}</option>
+      </select>
       <a
         href="https://www.instagram.com/_scarpari/"
         target="_blank"
@@ -43,7 +45,8 @@ const date = new Date();
     </div>
     <div class="mt-8 md:order-1 md:mt-0">
       <p class="text-center text-sm leading-5">
-        &copy; {date.getFullYear()} Bruno Scarpari. Todos os direitos reservados.
+        &copy; {date.getFullYear()}
+        {t("footer.author")}. {t("footer.rights")}
       </p>
     </div>
   </div>
