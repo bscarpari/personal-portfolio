@@ -9,14 +9,26 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), sitemap(), robotsTxt(), react()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    robotsTxt(),
+    react(),
+  ],
   site: SITE_URL,
   output: "server",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
     },
-  })
+  }),
+  i18n: {
+    defaultLocale: "pt-BR",
+    locales: ["pt-BR", "en"],
+    fallback: {
+      en: "pt",
+    },
+  },
 });

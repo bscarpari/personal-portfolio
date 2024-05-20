@@ -84,10 +84,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(126, 103, 255, 1);
+  background-color: white;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent);
+  background-color: white;
+  opacity: 0.5;
+}
+
+/* Selection color */
+::selection {
+  background-color: white;
+  color: black;
+}
+
+#spline-obj #logo {
+  display: none !important;
 }

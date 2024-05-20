@@ -1,0 +1,62 @@
+---
+/* Layout */
+import Navbar from "@/layouts/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/layouts/Container.astro";
+import Footer from "@/layouts/Footer.astro";
+
+/* Components */
+import HeroSection from "@/components/pages/home/HeroSection.astro";
+---
+
+<Layout>
+  <div class="section">
+    <Container>
+      <Navbar />
+      <HeroSection />
+      <Footer />
+    </Container>
+  </div>
+</Layout>
+
+<style>
+  .section {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  import ScrollReveal from "scrollreveal";
+
+  const sr = ScrollReveal();
+
+  sr.reveal(".section", {
+    origin: "top",
+    distance: "50px",
+    duration: 2000,
+    delay: 300,
+    reset: false,
+  });
+
+  const sections = ["#navbar", "#hero", "#footer"];
+
+  sections.forEach((section) => {
+    sr.reveal(section, {
+      origin: "top",
+      distance: "50px",
+      duration: 2000,
+      delay: 300,
+      reset: false,
+    });
+  });
+</script>

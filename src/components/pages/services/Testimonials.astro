@@ -1,0 +1,53 @@
+---
+import Spacing from "@/layouts/Spacing.astro";
+import Header from "@/components/ui/header.astro";
+import Testimonial from "@/components/ui/testimonial.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const testimonials = [
+  {
+    image: "/clients/maria.webp",
+    fullname: "Maria Eduarda Bastos",
+    description: `${t("services.testimonials.first")}`,
+    siteUrl: "https://mepb.myportfolio.com",
+  },
+  {
+    image: "/clients/valdir.webp",
+    fullname: "Valdir Rospirski",
+    description: `${t("services.testimonials.second")}`,
+    siteUrl: "https://rospirski.com",
+  },
+  {
+    image: "/clients/ayos.webp",
+    fullname: "Ayos Software",
+    description: `${t("services.testimonials.third")}`,
+    siteUrl: "https://ayos.dev",
+  },
+];
+---
+
+<div id="testimonials">
+  <Spacing>
+    <Header
+      title={t("services.testimonials.title")}
+      subtitle={t("services.testimonials.subtitle")}
+    />
+    <div
+      class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8 mt-16 px-6 sm:px-8"
+    >
+      {
+        testimonials.map((testimonial) => (
+          <Testimonial
+            image={testimonial.image}
+            fullname={testimonial.fullname}
+            description={testimonial.description}
+            siteUrl={testimonial.siteUrl}
+          />
+        ))
+      }
+    </div>
+  </Spacing>
+</div>

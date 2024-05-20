@@ -1,44 +1,7 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Container from "@/layouts/Container.astro";
+import { getLangFromUrl } from "@/i18n/utils";
 
-/* Sections */
-import Hero from "@/components/home/Hero.astro";
-import Services from "@/components/home/Services.astro";
-import About from "@/components/home/About.astro";
-import Testimonials from "@/components/home/Testimonials.astro";
-import Pricings from "@/components/home/Pricings.astro";
-import CTA from "@/components/home/CTA.astro";
-
-import Footer from "@/layouts/Footer.astro";
+const lang = getLangFromUrl(Astro.url);
+const redirectUrl = `/${lang}/`;
+return Astro.redirect(redirectUrl);
 ---
-
-<style>
-  .section {
-    opacity: 0;
-    animation: fade-in 1s ease-in-out forwards;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-
-<Layout>
-  <div class="section">
-    <Hero />
-    <Container>
-      <Services />
-      <About />
-      <Testimonials />
-      <Pricings />
-      <CTA />
-      <Footer />
-    </Container>
-  </div>
-</Layout>
